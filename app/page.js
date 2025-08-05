@@ -3,6 +3,7 @@ import AboutUs from "./components/AboutUs";
 import Products from "./components/Products";
 import Projects from "./components/Projects";
 import News from "./components/News";
+import OurExpertise from "./components/OurExpertise";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <AboutUs />
       <Products />
       <Projects />
+      <OurExpertise />
       <News />
     </div>
   );
