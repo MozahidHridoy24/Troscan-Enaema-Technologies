@@ -11,7 +11,7 @@ export default function Navbar() {
       animate={{ y: 20, opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
       className="hidden md:flex justify-between items-center w-7/12 mx-auto px-2 py-1 mt-2
-                 bg-[#fdf5f1] rounded-md shadow-lg fixed left-0 right-0 z-50"
+                 bg-gradient-to-br from-orange-50 to-amber-50 rounded-md shadow-lg fixed left-0 right-0 z-50"
     >
       {/* Logo */}
       <div className="text-2xl font-bold text-[#7a3f2e] tracking-wide pl-4">

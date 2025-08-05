@@ -2,6 +2,7 @@ import HeroBanner from "./components/HeroBanner";
 import AboutUs from "./components/AboutUs";
 import Products from "./components/Products";
 import Projects from "./components/Projects";
+import News from "./components/News";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <AboutUs />
       <Products />
       <Projects />
+      <News />
     </div>
   );
 }
