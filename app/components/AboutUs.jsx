@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform } from "motion/react";
 import Image from "next/image";
 
 export default function AboutUs() {
@@ -48,7 +48,7 @@ export default function AboutUs() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.8 }}
             >
-              <h1 className="text-4xl font-medium md:text-5xl lg:text-6xl  text-amber-900">
+              <h1 className="text-4xl font-medium md:text-5xl lg:text-6xl  text-amber-900 opacity-85">
                 Where Spaces
                 <br />
                 Inspire, and Design
