@@ -5,7 +5,7 @@ import { motion } from "motion/react";
 export default function HeroBanner() {
   return (
     <section
-      className="relative h-screen w-full flex items-center justify-center bg-cover bg-center"
+      className="relative h-screen w-full mx-auto overflow-x-hidden flex items-center justify-center bg-cover bg-center"
       style={{ backgroundImage: "url('/assets/banner.avif')" }}
     >
       <div className="absolute inset-0 bg-black/20 z-0" />

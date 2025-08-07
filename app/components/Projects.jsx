@@ -1,58 +1,38 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useScroll, useTransform } from "motion/react";
-
 function Project({ id, title, subtitle, imageSrc, index, gradient }) {
-  const ref = useRef(null);
-
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "start 0.3"],
-  });
-
-  // Zoom out scale effect
-  const scale = useTransform(scrollYProgress, [0, 1], [1.1, 1]);
-
   return (
-    <div ref={ref} className="min-h-[130vh] relative">
+    <div
+      className="h-screen sticky top-0 w-full overflow-hidden"
+      style={{ zIndex: index }} // Higher index = higher z-index = comes on top
+    >
+      {/* Image Background */}
+      <img
+        src={imageSrc}
+        alt={title}
+        className="absolute inset-0 w-full h-full object-cover"
+      />
+
+      {/* Gradient */}
       <div
-        className="sticky top-0 h-screen w-full"
-        style={{ zIndex: 10 - index }}
-      >
-        {/* Background Image with zoom animation */}
-        <motion.img
-          src={imageSrc}
-          alt={title}
-          style={{ scale }}
-          className="w-full h-full object-cover"
-        />
+        className="absolute bottom-0 left-0 w-full h-1/2"
+        style={{ background: gradient }}
+      />
 
-        {/* Gradient Overlay */}
-        <div className="absolute inset-0 z-10">
-          <div
-            className="absolute bottom-0 left-0 w-full h-1/2"
-            style={{
-              background: gradient,
-            }}
-          />
-        </div>
-
-        {/* Text Content */}
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-white px-4 md:px-12 z-20 text-center">
-          <p className="text-lg md:text-xl tracking-widest text-white/80 mb-2 font-mono">
-            {id}
-          </p>
-          <h2 className="max-w-xl text-4xl md:text-6xl font-bold mb-4 leading-tight drop-shadow-md">
-            {title}
-          </h2>
-          <p className="text-lg md:text-xl max-w-2xl mb-6 text-white/90 drop-shadow-sm">
-            {subtitle}
-          </p>
-          <button className="bg-white text-[#8d493a] px-6 py-3 rounded-md font-medium text-lg shadow-md hover:shadow-xl transition">
-            View Project
-          </button>
-        </div>
+      {/* Text */}
+      <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center z-10 px-4">
+        <p className="text-lg md:text-xl tracking-widest text-white/80 mb-2 font-mono">
+          {id}
+        </p>
+        <h2 className="max-w-xl text-4xl md:text-6xl font-bold mb-4 leading-tight drop-shadow-md">
+          {title}
+        </h2>
+        <p className="text-lg md:text-xl max-w-2xl mb-6 text-white/90 drop-shadow-sm">
+          {subtitle}
+        </p>
+        <button className="bg-white text-[#8d493a] px-6 py-3 rounded-md font-medium text-lg shadow-md hover:shadow-xl transition">
+          View Project
+        </button>
       </div>
     </div>
   );
@@ -76,7 +56,7 @@ export default function Projects() {
         subtitle="Bringing the beauty of the shore into your home."
         imageSrc="/assets/project02.avif"
         index={1}
-        gradient="linear-gradient(to top, rgba(100, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), transparent)"
+        gradient="linear-gradient(to top, rgba(100, 0, 0, 0.6), transparent)"
       />
 
       <Project
