@@ -33,10 +33,10 @@ export default function OurExpertise() {
 
   return (
     <div className="bg-gradient-to-br from-orange-50 to-amber-50">
-      <div className="w-11/12 mx-auto px-8 py-16">
-        {/* Header matching screenshot */}
+      <div className="w-11/12 mx-auto px-4 md:px-8 py-16">
+        {/* Header */}
         <motion.div
-          className="flex justify-center md:pl-90 items-center space-x-2 text-amber-900"
+          className="flex justify-start items-center space-x-2 text-amber-900"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.6 }}
@@ -44,8 +44,9 @@ export default function OurExpertise() {
           <span className="w-2 h-2 bg-amber-900 rounded-full"></span>
           <span className="text-sm font-medium">Our Expertise</span>
         </motion.div>
-        <div className="flex justify-end">
-          <h1 className="text-5xl text-start font-normal text-amber-900 mb-16 leading-tight">
+
+        <div className="md:flex md:justify-end">
+          <h1 className="text-4xl md:text-5xl text-start font-normal text-amber-900 mb-12 md:mb-16 leading-tight">
             Selecting the ideal
             <br />
             elements to elevate <br />
@@ -53,17 +54,18 @@ export default function OurExpertise() {
           </h1>
         </div>
 
-        <div className="flex flex-row-reverse gap-16">
-          {/* Titles on right */}
-          <div className="w-full max-w-md mt-10 ">
+        {/* Content wrapper */}
+        <div className="flex flex-col md:flex-row-reverse md:gap-16">
+          {/* Titles section */}
+          <div className="w-full md:max-w-md mt-4 md:mt-10">
             {services.map((item) => (
               <motion.div
                 key={item.id}
-                className="relative border-b border-[#8d493a]/20 py-5 px-6 cursor-pointer group overflow-hidden"
+                className="relative border-b border-[#8d493a]/20 py-4 md:py-5 px-4 md:px-6 cursor-pointer group overflow-hidden"
                 onHoverStart={() => setActiveItem(item.id)}
                 initial={false}
               >
-                {/* Background animation element */}
+                {/* Background animation */}
                 <motion.div
                   className="absolute bottom-0 left-0 right-0 h-full bg-[#8d493a] origin-bottom"
                   initial={{ scaleY: 0 }}
@@ -76,14 +78,14 @@ export default function OurExpertise() {
 
                 <div className="relative flex items-center z-10">
                   <span
-                    className={`text-lg font-medium mr-4 ${
+                    className={`text-base md:text-lg font-medium mr-3 md:mr-4 ${
                       activeItem === item.id ? "text-white" : "text-[#8d493a]"
                     }`}
                   >
                     {item.id.toString().padStart(2, "0")}
                   </span>
                   <motion.p
-                    className={`text-xl font-medium ${
+                    className={`text-lg md:text-xl font-medium ${
                       activeItem === item.id ? "text-white" : "text-[#8d493a]"
                     }`}
                     animate={{
@@ -104,8 +106,8 @@ export default function OurExpertise() {
             ))}
           </div>
 
-          {/* Image on left */}
-          <div className="flex-1 relative h-[500px] overflow-hidden rounded-lg shadow-xl">
+          {/* Image section — only visible on md and above */}
+          <div className="hidden md:flex flex-1 relative h-[500px] overflow-hidden rounded-lg shadow-xl">
             <AnimatePresence mode="popLayout">
               <motion.div
                 key={activeItem}
