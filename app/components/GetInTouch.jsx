@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform } from "motion/react";
 import Image from "next/image";
 import bgImage from "../../public/assets/git.avif";
 
@@ -39,7 +39,7 @@ export default function GetInTouch() {
             Ready to reimagine your space? Connect with us at Troscán to bring
             your vision to life with our expertise in design and decoration.
           </p>
-          <button className="bg-[#8d493a] text-white font-semibold text-md px-6 py-3 rounded-md">
+          <button className="bg-[#8d493a] text-white font-semibold text-md px-6 py-3 rounded-md hover:bg-amber-800">
             Get in Touch
           </button>
         </div>
