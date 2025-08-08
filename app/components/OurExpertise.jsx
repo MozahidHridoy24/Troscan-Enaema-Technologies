@@ -36,7 +36,7 @@ export default function OurExpertise() {
       <div className="w-11/12 mx-auto px-4 md:px-8 py-16">
         {/* Header */}
         <motion.div
-          className="flex justify-start items-center space-x-2 text-amber-900"
+          className="flex justify-start md:justify-center md:pl-90 items-center space-x-2 text-amber-900"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.6 }}

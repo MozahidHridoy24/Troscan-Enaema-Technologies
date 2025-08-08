@@ -93,7 +93,7 @@ export default function Products() {
 
       {/* Text section */}
       <motion.div className="absolute bottom-0 w-full h-screen flex items-center justify-center mb-20">
-        <div className="max-w-xl text-center px-6">
+        <div className="max-w-xl text-center px-6 mt-28">
           <p className="text-amber-900 text-2xl md:text-3xl font-semibold">
             Transforming spaces with style, through Troscán's exquisite design
             expertise.

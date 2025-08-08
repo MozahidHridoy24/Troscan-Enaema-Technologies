@@ -19,7 +19,7 @@ export default function HeroBanner() {
       />
 
       {/* Content */}
-      <div className="relative w-full z-10 text-center px-4 md:px-12">
+      <div className="relative w-11/12 z-10 text-center px-4 md:px-12">
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}

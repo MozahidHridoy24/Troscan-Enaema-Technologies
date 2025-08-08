@@ -8,7 +8,7 @@ import GetInTouch from "./components/GetInTouch";
 
 export default function Home() {
   return (
-    <div>
+    <div className="overflow-hidden">
       <HeroBanner />
       <AboutUs />
       <Products />
